@@ -1,0 +1,12 @@
+{
+  "name": "Python & MongoDB Dev Container",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "mongodb.mongodb-vscode",
+    "ms-python.python"
+  ],
+  "forwardPorts": [
+    27017
+  ],
+  "postCreateCommand": "pip install --no-cache-dir -r requirements.txt"
+}
