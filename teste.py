@@ -8,6 +8,7 @@ load_dotenv()
 
 # Obtém a URI do MongoDB a partir do .env
 uri = os.getenv('MONGO_URI')
+print(uri)
 
 client = MongoClient(uri, server_api=ServerApi('1'))
 

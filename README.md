@@ -1,3 +1,3 @@
 # mongodb
 
-curl ifconfig.me
+curl ifconfig.me 
