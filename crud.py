@@ -52,6 +52,35 @@ print("Produto atualizado.")
 # collection.delete_one({"_id": result.inserted_id})
 # print("Produto deletado.")
 
+db2 = client["cinema"]
+colecao_filmes = db2["filmes"]
+
+filmes = [
+    {
+        "titulo": "Clube da Luta",
+        "ano_lancamento": 1999,
+        "diretor": "David Fincher",
+        "generos": ["Drama", "Suspense"]
+    },
+    {
+        "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+        "ano_lancamento": 2001,
+        "diretor": "Peter Jackson",
+        "generos": ["Aventura", "Fantasia"]
+    },
+    {
+        "titulo": "Duna",
+        "ano_lancamento": 2021,
+        "diretor": "Denis Villeneuve",
+        "generos": ["Ficção Científica", "Aventura"]
+    }
+]
+
+colecao_filmes.insert_many(filmes)
+
+filmes_pos_2000 = colecao_filmes.find({"ano_lancamento": {"$gt": 2000}})
+for filme in filmes_pos_2000:
+    print(filme)
 
 # É importante fechar a conexão
 client.close()
